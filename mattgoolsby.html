@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matt Goolsby — Zhineng Qigong Therapist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage-50:  #f2f5f0;
+      --sage-100: #dde8d8;
+      --sage-200: #bdd4b4;
+      --sage-400: #7da870;
+      --sage-600: #4f7a45;
+      --sage-700: #3a5c32;
+      --charcoal: #2a2d2b;
+      --charcoal-soft: #3f4440;
+      --charcoal-muted: #6b716c;
+      --charcoal-faint: #9ba39c;
+      --cream: #f8f6f1;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+      background: var(--cream);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+    }
+
+    .nav-credential {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal-faint);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 96px 40px 112px;
+      background: var(--cream);
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, var(--sage-50) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--sage-50);
+      border: 1px solid var(--sage-200);
+      border-radius: 99px;
+      padding: 6px 16px;
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sage-600);
+    }
+
+    .hero-badge span {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage-700);
+      font-weight: 500;
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.18;
+      color: var(--charcoal);
+      max-width: 580px;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      position: relative;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--sage-600);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--charcoal-muted);
+      line-height: 1.8;
+      max-width: 400px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .hero-cert {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--charcoal-faint);
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--charcoal);
+      color: var(--white);
+      border: none;
+      border-radius: 3px;
+      padding: 17px 40px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.25s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--charcoal-soft);
+      transform: translateY(-2px);
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 60px;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--sage-100);
+    }
+
+    .section-divider svg {
+      width: 20px;
+      height: 20px;
+      opacity: 0.4;
+    }
+
+    .community {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 40px 96px;
+      background: var(--sage-50);
+    }
+
+    .community-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--charcoal-faint);
+      margin-bottom: 18px;
+    }
+
+    .community-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .community-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--charcoal-muted);
+      line-height: 1.8;
+      max-width: 360px;
+      margin-bottom: 36px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--charcoal);
+      border: 1px solid var(--sage-400);
+      border-radius: 3px;
+      padding: 14px 34px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--sage-600);
+      color: var(--white);
+      border-color: var(--sage-600);
+    }
+
+    footer {
+      padding: 28px 60px;
+      border-top: 1px solid var(--sage-100);
+      background: var(--cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--charcoal-faint);
+      letter-spacing: 0.04em;
+    }
+
+    footer .footer-cert {
+      font-size: 11px;
+      color: var(--charcoal-faint);
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge  { animation: fadeUp 0.5s ease both; animation-delay: 0.05s; }
+    .hero-h1     { animation: fadeUp 0.6s ease both; animation-delay: 0.15s; }
+    .hero-sub    { animation: fadeUp 0.6s ease both; animation-delay: 0.28s; }
+    .hero-cert   { animation: fadeUp 0.6s ease both; animation-delay: 0.36s; }
+    .btn-primary { animation: fadeUp 0.6s ease both; animation-delay: 0.46s; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Matt Goolsby</span>
+    <span class="nav-credential">Certified Zhineng Qigong Therapist · HYQT</span>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>1-on-1 healing sessions now open</span>
+    </div>
+    <h1 class="hero-h1">Restore your body's<br><em>natural ability to heal.</em></h1>
+    <p class="hero-sub">Zhineng Qigong therapy sessions for people ready to address the root — not just the symptoms.</p>
+    <p class="hero-cert">Certified practitioner · HYQT</p>
+    <button class="btn-primary">Apply for 1-on-1</button>
+  </section>
+
+  <div class="section-divider">
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 2C10 2 3 7 3 13a7 7 0 0014 0C17 7 10 2 10 2z" fill="#4f7a45"/>
+    </svg>
+  </div>
+
+  <section class="community">
+    <p class="community-label">Not ready for 1-on-1?</p>
+    <h2 class="community-h2">Join the free community</h2>
+    <p class="community-sub">Learn the foundations of Zhineng Qigong, ask questions, and connect with others on the path — no commitment required.</p>
+    <button class="btn-outline">Join on Skool — it's free</button>
+  </section>
+
+  <footer>
+    <p>© 2026 Matt Goolsby</p>
+    <span class="footer-cert">Certified Zhineng Qigong Therapist · HYQT</span>
+  </footer>
+
+</body>
+</html>
